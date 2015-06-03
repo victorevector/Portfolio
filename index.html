@@ -48,26 +48,30 @@
                 </div>
 
                 <script>
+                    // Hide elements that will have slide toggle functionalitiy
                     $('.hidden').hide();
+                    // Add slide toggle functionality to elements....
                     portfolio.slideToggleEl( $('#project-link'), $('#project-list') );
                     portfolio.slideToggleEl( $('#contact-me-link'), $('#contact-me-content-container') );
+
+                    // Center elements relative to browser's window
                     portfolio.center( $(window), $('body') );
                     portfolio.center( $('body'), $('.container-body') );
 
+                    // Events that change border and text colors 
                     $('.link').on('click', function() { 
                         $('.hidden').css( 'border-color', FrameColor.randomColor() );
                     });
-
                     $('.link').hover( function() { $(this).css('color', FrameColor.randomColor() ); },
                         function() { $(this).css('color', 'black' ); } );
                     $('.project-name').hover( function() { $(this).css('color', FrameColor.randomColor() ); },
                         function() { $(this).css('color', 'black' ); } );
 
+                    // Events that trigger the creation of the Modal Window
                     $('.project-name').on('click', function(event) {
                         var selectedEl = $(event.target).attr('id');
                         portfolio.modalWindowInit(selectedEl); 
                     });
-                    // $('#contact-me-link').on('click', function() {portfolio.modalWindowInit(event.target); } );
                     $('#about-me-link').on('click', function() {portfolio.modalWindowInit(event.target); } ); 
                     
                 </script>
