@@ -28,7 +28,7 @@ var portfolio = {};
             var $modalWindow = $('<div class="modal-window"></div>');
             $modalWindow.css( initialSettings ).prependTo('body');
             portfolioObj.center( $('body'), $modalWindow);
-            $modalWindow.animate( {left:'20%', width:"60%", top:'10%', height: "80%"}, "slow"); 
+            $modalWindow.animate( {left:'20%', width:"60%", top:'10%', height: "80%"}, "slow", addContent ); 
 
             // ADD CLOSE FUNCTIONALITY TO WINDOW
             var $closeWindow = $('<div class="close"> <b>X</b> </div> ');
@@ -36,12 +36,14 @@ var portfolio = {};
             $modalWindow.append( $closeWindow ).append($closeFunction);
 
             // ADD PROJECT CONTENT TO WINDOW
-            var selectedProject;
-            projects.forEach( function(cV){
-                  if(selectedId == cV.id){ selectedProject = cV; }
-            });
-            // $modalWindow.append(selectedProject.content);
-            selectedProject.content();
+            function addContent (){
+                  var selectedProject;
+                  projects.forEach( function(cV){
+                        if(selectedId == cV.id){ selectedProject = cV; }
+                  });
+                  selectedProject.content();
+            }
+            
       };
 
       portfolioObj.close = function(el){
