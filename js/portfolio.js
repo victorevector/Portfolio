@@ -9,10 +9,10 @@ var portfolio = {};
 
       var projects = [ 
       {name: 'Fischer-Random Chess Position Generator', id: 'fischer', content: function(){ $('.modal-window').load('project-content/fischer.html'); } },
-      {name: 'chatRoom', id: 'chatRoom', content: '' },
-      {name: 'Amazon Price Scraper' , id: 'priceScraper' , content: '' },
-      {name: 'Genetics and Drug Metabolism', id: '23andMe' , content: '' },
-      {name: 'Durr-inspired Watch' , id: 'durr' , content: '' },
+      {name: 'chatRoom', id: 'chatRoom', content: function(){ $('.modal-window').load('project-content/fischer.html'); } },
+      {name: 'Amazon Price Scraper' , id: 'priceScraper' , content: function(){ $('.modal-window').load('project-content/fischer.html'); } },
+      {name: 'Genetics and Drug Metabolism', id: '23andMe' , content: function(){ $('.modal-window').load('project-content/fischer.html'); } },
+      {name: 'Durr-inspired Watch' , id: 'durr' , content: function(){ $('.modal-window').load('project-content/fischer.html'); } },
       ];
 
       portfolioObj.modalWindowInit = function (selectedId) {
@@ -30,10 +30,6 @@ var portfolio = {};
             portfolioObj.center( $('body'), $modalWindow);
             $modalWindow.animate( {left:'20%', width:"60%", top:'10%', height: "80%"}, "slow", addContent ); 
 
-            // ADD CLOSE FUNCTIONALITY TO WINDOW
-            var $closeWindow = $('<div class="close"> <b>X</b> </div> ');
-            var $closeFunction = $( "<script> $('.close').on('click', function() { portfolio.close($('.modal-window')); } ); </script>"); //ERROR PRONE BECAUSE portfolio is hardcoded as this module's name!
-            $modalWindow.append( $closeWindow ).append($closeFunction);
 
             // ADD PROJECT CONTENT TO WINDOW
             function addContent (){
