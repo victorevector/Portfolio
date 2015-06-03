@@ -44,7 +44,6 @@ var portfolio = {};
             selectedProject.content();
       };
 
-
       portfolioObj.close = function(el){
             var $modalWindow = el;
             $modalWindow.animate(

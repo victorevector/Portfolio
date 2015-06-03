@@ -6,6 +6,7 @@ body{
     width: 95%;
     font-family: 'Ubuntu', sans-serif;
     font-weight: 400;
+    z-index: 0;
 }
 .container-body{
     width: 60%;
