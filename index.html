@@ -54,9 +54,13 @@
                     portfolio.slideToggleEl( $('#project-link'), $('#project-list') );
                     portfolio.slideToggleEl( $('#contact-me-link'), $('#contact-me-content-container') );
 
-                    // Center elements relative to browser's window
-                    portfolio.center( $(window), $('body') );
-                    portfolio.center( $('body'), $('.container-body') );
+                    // Center elements relative to browser's window on 2 occasions: when page first opens and when page is resized
+                    centerInit(); 
+                    $(window).resize( centerInit );
+                    function centerInit(){
+                        portfolio.center( $(window), $('body') );
+                        portfolio.center( $('body'), $('.container-body') );
+                    } ;
 
                     // Events that change border and text colors 
                     $('.link').on('click', function() { 
