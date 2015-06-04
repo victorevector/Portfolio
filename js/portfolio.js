@@ -8,6 +8,7 @@ var portfolio = {};
       };
 
       var projects = [ 
+      {name: 'Mackey Insurance', id: 'mackey', content: function(){ $('.modal-window').load('project-content/mackey.html'); } },
       {name: 'Fischer-Random Chess Position Generator', id: 'fischer', content: function(){ $('.modal-window').load('project-content/fischer.html'); } },
       {name: 'chatRoom', id: 'chatRoom', content: function(){ $('.modal-window').load('project-content/chatRoom.html'); } },
       {name: 'Amazon Price Scraper' , id: 'priceScraper' , content: function(){ $('.modal-window').load('project-content/priceScraper.html'); } },
