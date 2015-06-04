@@ -30,10 +30,11 @@
                                         <li class='link' id='contact-me-link'>contact me</li>
                                         <li class='hidden' id='contact-me-content-container'>
                                             <div id='contact-me-content'>
-                                                victorevector@gmail.com
-                                                </br>
-                                                linkedin
+                                                <p>
+                                                <a href="mailto:victorevector@gmail.com">victorevector@gmail.com</a> 
                                             </br>
+                                                <a href="https://www.linkedin.com/in/victorefimbres">linkedin</a>
+                                                </p>
                         
                                             </div>
                                         </li>
@@ -58,8 +59,11 @@
                     } ;
 
                     // Events that change border and text colors 
-                    $('.link').on('click', function() { 
-                        $('.hidden').css( 'border-color', FrameColor.randomColor() );
+                    $('#project-link').on('click', function() { 
+                        $('#project-list').css( 'border-color', FrameColor.randomColor() );
+                    });
+                    $('#contact-me-link').on('click', function() { 
+                        $('#contact-me-content-container').css( 'border-color', FrameColor.randomColor() );
                     });
                     $('.link').hover( function() { $(this).css('color', FrameColor.randomColor() ); },
                         function() { $(this).css('color', 'black' ); } );
