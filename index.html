@@ -26,12 +26,7 @@
                                                 <div class='project-name' id='23andMe'>Genetics and Drug Metabolism</div>
                                                 <div class='project-name' id='durr'>Durr-inspired Watch</div>
                                         </li>
-                                        <li class='link' id='about-me-link'>about me</li>
-                                        <li class='hidden' id='about-me-content-container'>
-                                            <div id='about-me-content'>
-                                                My name is Victor Esteban Fimbres. I am ...
-                                            </div>
-                                        </li>
+                                        <li class='link' id='about-me'>about me</li>
                                         <li class='link' id='contact-me-link'>contact me</li>
                                         <li class='hidden' id='contact-me-content-container'>
                                             <div id='contact-me-content'>
@@ -76,7 +71,10 @@
                         var selectedEl = $(event.target).attr('id');
                         portfolio.modalWindowInit(selectedEl); 
                     });
-                    $('#about-me-link').on('click', function() {portfolio.modalWindowInit(event.target); } ); 
+                    $('#about-me').on('click', function() {
+                        var selectedEl = $(event.target).attr('id');
+                        portfolio.modalWindowInit(selectedEl); 
+                    } ); 
                     
                 </script>
                 

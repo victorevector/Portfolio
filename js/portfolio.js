@@ -13,6 +13,7 @@ var portfolio = {};
       {name: 'Amazon Price Scraper' , id: 'priceScraper' , content: function(){ $('.modal-window').load('project-content/priceScraper.html'); } },
       {name: 'Genetics and Drug Metabolism', id: '23andMe' , content: function(){ $('.modal-window').load('project-content/23andMe.html'); } },
       {name: 'Durr-inspired Watch' , id: 'durr' , content: function(){ $('.modal-window').load('project-content/durr.html'); } },
+      {name: 'About me' , id: 'about-me' , content: function(){ $('.modal-window').load('project-content/about-me.html'); } },
       ];
 
       portfolioObj.modalWindowInit = function (selectedId) {

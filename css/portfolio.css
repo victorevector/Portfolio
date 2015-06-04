@@ -44,3 +44,11 @@ body{
     list-style-type: none;
     padding: 0;
 }
+.project-content{
+    line-height: 115%;
+    padding-left: 2%;
+}
+.project-content a {
+    text-decoration: none;
+}
+
