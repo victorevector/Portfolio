@@ -1,0 +1,18 @@
+<div class="close"> <b>X</b> </div>
+<div class='project-content'> 
+    <h1> Genetics and Drug Metabolism </h1>
+    <p> 
+        In many cases, a persons genetic code can offer insight into how that person will metabolize and react to certain medications. I built an application that can inform a user whether he or she carries genetic markers correlated to certain drugs. For example, a user could find out if they carry a sensitivity to the drug, Carbemazepine. The app will inform the user if their DNA contains the single-nucleotide polymorphism (SNP), rs1061235(T). Carriers of that SNP have an increased risk of Carbamazepine-induced hypersensitivity reactions, such as maculopapular exanthema.
+    </p>
+    <p>
+       I built the app with python, django, and postgres. The user's data is hosted on the <a href='http://23andme.com' target='_blank'> 23andMe </a> servers, which requires an Oauth2 handshake to access. I built out the Oauth2 client from scratch. 
+    </p>
+    <p>
+        <a href='https://github.com/victorevector/Genetics-and-Drug-Metabolism' target='_blank'> github </a> 
+    </p>
+
+</div>
+
+<script> 
+$('.close').on('click', function() { portfolio.close($('.modal-window')); } ); 
+</script>

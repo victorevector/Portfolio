@@ -9,10 +9,10 @@ var portfolio = {};
 
       var projects = [ 
       {name: 'Fischer-Random Chess Position Generator', id: 'fischer', content: function(){ $('.modal-window').load('project-content/fischer.html'); } },
-      {name: 'chatRoom', id: 'chatRoom', content: function(){ $('.modal-window').load('project-content/fischer.html'); } },
-      {name: 'Amazon Price Scraper' , id: 'priceScraper' , content: function(){ $('.modal-window').load('project-content/fischer.html'); } },
-      {name: 'Genetics and Drug Metabolism', id: '23andMe' , content: function(){ $('.modal-window').load('project-content/fischer.html'); } },
-      {name: 'Durr-inspired Watch' , id: 'durr' , content: function(){ $('.modal-window').load('project-content/fischer.html'); } },
+      {name: 'chatRoom', id: 'chatRoom', content: function(){ $('.modal-window').load('project-content/chatRoom.html'); } },
+      {name: 'Amazon Price Scraper' , id: 'priceScraper' , content: function(){ $('.modal-window').load('project-content/priceScraper.html'); } },
+      {name: 'Genetics and Drug Metabolism', id: '23andMe' , content: function(){ $('.modal-window').load('project-content/23andMe.html'); } },
+      {name: 'Durr-inspired Watch' , id: 'durr' , content: function(){ $('.modal-window').load('project-content/durr.html'); } },
       ];
 
       portfolioObj.modalWindowInit = function (selectedId) {
