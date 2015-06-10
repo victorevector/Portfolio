@@ -65,13 +65,13 @@ var portfolio = {};
 
       }) (portfolio);
 
-      var FrameColor = ( function() {
-            var colors = ["#FF6961", "#779ECB", "#FFD1DC", "#966FD6", "#CB99C9", "#C23B22", "#AEC6CF", "#FDFD96", "#03C03C", "#FFB347", "#B19CD9"];
-            return {
-                  randomColor: function(){
-                        return colors[ Math.floor(Math.random() * colors.length) ];
-                  }
-            };
+var FrameColor = ( function() {
+      var colors = ["#FF6961", "#779ECB", "#FFD1DC", "#966FD6", "#CB99C9", "#C23B22", "#AEC6CF", "#FDFD96", "#03C03C", "#FFB347", "#B19CD9"];
+      return {
+            randomColor: function(){
+                  return colors[ Math.floor(Math.random() * colors.length) ];
+            }
+      };
 } ) ();
 
 
