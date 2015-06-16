@@ -1,5 +1,5 @@
 <div class="close"> <b>X</b> </div>
-<div class='project-content'> 
+<div class='project-content' style='position: absolute;'> 
     <h1> Fischer-Random Chess Position Generator </h1>
     <p> This web application will generate random opening positions for your chess game's backrow pieces. The positions are randomly generated in accordance to the rules set by Bobby Fischer.
     </p>
@@ -14,4 +14,5 @@
 
 <script> 
 $('.close').on('click', function() { portfolio.close($('.modal-window')); } ); 
+portfolio.center($('.modal-window'),$('.project-content'));
 </script>

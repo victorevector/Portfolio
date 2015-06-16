@@ -1,6 +1,5 @@
-<!-- <link rel='stylesheet' type='text/css' href='css/modal-window.css'> -->
 <div class="close"> <b>X</b> </div>
-<div class='project-content'> 
+<div class='project-content' style='position: absolute;'> 
     <h1> Genetics and Drug Metabolism </h1>
     <p> 
         In many cases, a persons genetic code can offer insight into how that person will metabolize and react to certain medications. I built an application that can inform a user whether he or she carries genetic markers correlated to certain drugs. For example, a user could find out if they carry a sensitivity to the drug, Carbemazepine. The app will inform the user if their DNA contains the single-nucleotide polymorphism (SNP), rs1061235(T). Carriers of that SNP have an increased risk of Carbamazepine-induced hypersensitivity reactions, such as maculopapular exanthema.
@@ -16,4 +15,5 @@
 
 <script> 
 $('.close').on('click', function() { portfolio.close($('.modal-window')); } ); 
+portfolio.center($('.modal-window'),$('.project-content'));
 </script>

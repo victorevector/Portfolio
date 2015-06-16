@@ -1,5 +1,5 @@
 <div class="close"> <b>X</b> </div>
-<div class='project-content'> 
+<div class='project-content' style='position: absolute;'> 
     <h1> chatRoom </h1>
     <p> 
         I built a simple and anonymous chat room for my first javascript/jquery project. 
@@ -16,4 +16,5 @@
 
 <script> 
 $('.close').on('click', function() { portfolio.close($('.modal-window')); } ); 
+portfolio.center($('.modal-window'),$('.project-content'));
 </script>

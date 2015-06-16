@@ -1,5 +1,5 @@
 <div class="close"> <b>X</b> </div>
-<div class='project-content'> 
+<div class='project-content' style='position: absolute; '> 
     <h1> Mackey Insurance Website </h1>
     <p> 
         I co-built a website for a life insurance agency with <a href="https://www.linkedin.com/pub/loren-brindze/92/620/20b" target="_blank">Loren Brindze</a>.
@@ -14,4 +14,5 @@
 
 <script> 
 $('.close').on('click', function() { portfolio.close($('.modal-window')); } ); 
+portfolio.center($('.modal-window'),$('.project-content'));
 </script>

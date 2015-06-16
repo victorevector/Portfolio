@@ -1,8 +1,10 @@
 <div class="close"> <b>X</b> </div>
-<div class='project-content'> 
+<div class='project-content' style='position: absolute;'> 
     <h1> Durr-inspired Watch </h1>
     <p> 
-        I built a watch that vibrates every 5 minutes. It is a thought experiment on time's simultaneous objectivity and subjectivity. 
+        I built a watch that vibrates every 5 minutes. 
+    </br>
+        It is a thought experiment on time's simultaneous objectivity and subjectivity. 
     </p>
     <p>
         For this project I learned to...
@@ -28,4 +30,5 @@
 
 <script> 
 $('.close').on('click', function() { portfolio.close($('.modal-window')); } ); 
+portfolio.center($('.modal-window'),$('.project-content'));
 </script>

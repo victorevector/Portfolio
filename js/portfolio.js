@@ -26,11 +26,12 @@ var portfolio = {};
                         'z-index': '1000',
                         'position': 'absolute',
                         'background-color': 'white',
+                        'overflow': 'scroll',
                          } ;
             var $modalWindow = $('<div class="modal-window"></div>');
             $modalWindow.css( initialSettings ).prependTo('body');
             portfolioObj.center( $('body'), $modalWindow);
-            $modalWindow.animate( {left:'20%', width:"60%", top:'10%', height: "80%"}, "slow", addContent ); 
+            $modalWindow.animate( {left:'1%', width:"95%", top:'0%', height: "100%"}, "slow", addContent ); 
 
 
             // ADD PROJECT CONTENT TO WINDOW

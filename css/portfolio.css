@@ -46,7 +46,7 @@ body{
 }
 .project-content{
     line-height: 115%;
-    padding-left: 2%;
+    padding: 2%;
 }
 a {
     text-decoration: none;
