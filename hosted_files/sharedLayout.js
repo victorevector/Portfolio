@@ -5,9 +5,10 @@
 
 var roundFeather = {};
 (function (rf) {
-    var leftDiv = jQuery('#hDHMenuDiv');
-    var rightDiv = jQuery('#hScrollDiv');
-    var navMenu = jQuery('#navigationMenu');
+    var $ = jQuery;
+    var leftDiv = $('#hDHMenuDiv');
+    var rightDiv = $('#hScrollDiv');
+    var navMenu = $('#navigationMenu');
     var navLi = navMenu.children()
     var navButtons = navMenu.children().children();
     var navText = navMenu.children().children().children();
@@ -74,9 +75,31 @@ var roundFeather = {};
         });
     }
 
+    rf.setRightHeight = function () {
+        // Right container is set too low and get bottom cut off
+        // Always: Doc.height() - Menu.height() = Right.height()
+        // Right.css('top') == Menu.height() + some padding
+
+        var divPadding = 15;
+        var docHeight = $(document).height();
+        var hHeight = $('header').height();
+        var rightHeight = docHeight - hHeight;
+        rightDiv.css({
+            'height': String( rightHeight - divPadding ) + 'px' ,
+            'top': String(hHeight) + 'px',
+            'padding-top': String(divPadding) + 'px',
+        });
+    }
+
+    rf.resizeRightHeight = function () {
+        $(window).on('resize', rf.setRightHeight);
+    }
+
     rf.initSetLayout = function (pageTitle) {
+        rf.setRightHeight();
         rf.startingPositionsInit();
         rf.resizeNavbar(pageTitle);
         rf.rightToggle();
+        rf.resizeRightHeight();
     }
 })(roundFeather);
