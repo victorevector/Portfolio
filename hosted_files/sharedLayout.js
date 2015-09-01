@@ -68,6 +68,7 @@ var roundFeather = {};
         // rightDiv returns from hidding
 
         navMenu.on('click', function () {
+            rightDiv.css('top', '18%');
             leftDiv.css('width', '50%');
             rightDiv.show();
         });
