@@ -96,8 +96,8 @@ var roundFeather = {};
     }
 
     rf.initSetLayout = function (pageTitle) {
-        rf.setRightHeight();
         rf.startingPositionsInit();
+        rf.setRightHeight();
         rf.resizeNavbar(pageTitle);
         rf.rightToggle();
         rf.resizeRightHeight();
