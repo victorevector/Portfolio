@@ -66,12 +66,12 @@ var roundFeather = {};
         // Adds event listener to navbar. Click event will trigger the following
         // sequence of events:
         // leftDiv's width returns to 50%
-        // rightDiv returns from hidding
+        // rightDiv returns from hidding and then calls setRightHeight
 
         navMenu.on('click', function () {
             rightDiv.css('top', '18%');
             leftDiv.css('width', '50%');
-            rightDiv.show();
+            rightDiv.show(rf.setRightHeight);
         });
     }
 
@@ -97,7 +97,6 @@ var roundFeather = {};
 
     rf.initSetLayout = function (pageTitle) {
         rf.startingPositionsInit();
-        rf.setRightHeight();
         rf.resizeNavbar(pageTitle);
         rf.rightToggle();
         rf.resizeRightHeight();
