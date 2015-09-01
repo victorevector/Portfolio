@@ -17,7 +17,7 @@ var roundFeather = {};
         // Matches title with relevant css properties
         // Case Studies is the only page with different navbar button dimensions
 
-        if (pageTitle == 'Case Studies') {
+        if (pageTitle == 'case studies') {
             navButtons.css({
                 'height': '100px',
                 'width': '100px',
