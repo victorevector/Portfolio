@@ -68,18 +68,16 @@ var roundFeather = {};
         // leftDiv's width returns to 50%
         // rightDiv returns from hidding and then calls setRightHeight
 
-        // navMenu.on('click', function () {
-        //     rightDiv.css('top', '18%');
-        //     leftDiv.css('width', '50%');
-        //     rightDiv.show(rf.setRightHeight);
-        // });
         navMenu.on('click', properties)
         function properties() {
             leftDiv.animate(properties= {'width': '50%',},
                 options={'start': function(){
                     rightDiv.animate(properties={
                         'width': '50%',
-                    }, function(){ rightDiv.show(); });
+                    }, function(){
+                        rightDiv.show();
+                        rf.setRightHeight();
+                     });
                 },
             });
         }
