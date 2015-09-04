@@ -79,7 +79,7 @@ var roundFeather = {};
                 options={'start': function(){
                     rightDiv.animate(properties={
                         'width': '50%',
-                    });
+                    }, rightDiv.show);
                 },
             });
         }
