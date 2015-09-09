@@ -87,7 +87,8 @@ var roundFeather = {};
             function openRightDiv() {
                 rightDiv.animate(css, function(){
                     rightDiv.show();
-                    rf.setRightHeight();
+                    rf.setRightHeight(); //makes sure the rightDiv is not blocked by the menu && does not cut off at the bottom
+                    window.location = event.target.href; //opens up the proper link upon rightDiv's reveal
                 });
             }
         }
