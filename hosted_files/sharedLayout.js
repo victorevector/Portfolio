@@ -78,9 +78,9 @@ var roundFeather = {};
         // eventSource keeps track of what navbuttons have been clicked
 
         event.target == eventSource ? closeDiv() : openDiv();
-        eventSource = event.target;
 
         function openDiv(){
+            eventSource = event.target;
             var css = {'width': '50%'};
             leftDiv.animate(css, {'start': openRightDiv });
 
