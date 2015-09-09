@@ -12,6 +12,7 @@ var roundFeather = {};
     var navLi = navMenu.children()
     var navButtons = navMenu.children().children();
     var navText = navMenu.children().children().children();
+    var eventSource = null;
 
     rf.resizeNavbar = function resizeNavbar(pageTitle) {
         // Resizes the navbar given a page title.
@@ -62,24 +63,36 @@ var roundFeather = {};
         leftDiv.css({ 'width': '100%' });
     }
 
-    rf.rightToggle = function () {
-        // Adds event listener to navbar. Click event will trigger the following
-        // sequence of events:
-        // leftDiv's width returns to 50%
-        // rightDiv returns from hidding and then calls setRightHeight
+    rf.rightToggle = function(){
+        // Adds event listener to navbar. Click event will call the function, controller,
+        // and pass it event object.
+        navMenu.on('click', controller)
+    }
 
-        navMenu.on('click', properties)
-        function properties() {
-            leftDiv.animate(properties= {'width': '50%',},
-                options={'start': function(){
-                    rightDiv.animate(properties={
-                        'width': '50%',
-                    }, function(){
-                        rightDiv.show();
-                        rf.setRightHeight();
-                     });
-                },
-            });
+    function controller(event) {
+        // callback function to event listener created in rf.rightToggle()
+        // This function will either 'open' or 'close' the rightDiv depending
+        // on the event source.
+        // event.target == eventSource?  'close' : 'open'
+        event.target == eventSource ? closeDiv() : openDiv();
+
+        function openDiv(){
+            var css = {'width': '50%'};
+            leftDiv.animate(css, {'start': openRightDiv });
+
+            function openRightDiv() {
+                rightDiv.animate(css, function(){
+                    rightDiv.show();
+                    rf.setRightHeight();
+                });
+            }
+        }
+        function closeDiv(){
+            leftDiv.animate({'width': '100%'}, {'start': closeRightDiv });
+
+            function closeRightDiv(){
+                rightDiv.animate({'width': '0%'}, rightDiv.hide)
+            }
         }
     }
 
