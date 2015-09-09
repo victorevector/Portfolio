@@ -72,10 +72,14 @@ var roundFeather = {};
     function controller(event) {
         // callback function to event listener created in rf.rightToggle()
         // This function will either 'open' or 'close' the rightDiv depending
-        // on the event source.
+        // on the event target.
         // event.target == eventSource?  'close' : 'open'
+        // eventSource is binded to this module.
+        // eventSource keeps track of what navbuttons have been clicked
+
         event.target == eventSource ? closeDiv() : openDiv();
         eventSource = event.target;
+
         function openDiv(){
             var css = {'width': '50%'};
             leftDiv.animate(css, {'start': openRightDiv });
@@ -87,9 +91,10 @@ var roundFeather = {};
                 });
             }
         }
+
         function closeDiv(){
             leftDiv.animate({'width': '100%'}, {'start': closeRightDiv });
-
+            eventSource = null;
             function closeRightDiv(){
                 rightDiv.animate({'width': '0%'}, rightDiv.hide)
             }
