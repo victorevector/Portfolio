@@ -75,7 +75,7 @@ var roundFeather = {};
         // on the event source.
         // event.target == eventSource?  'close' : 'open'
         event.target == eventSource ? closeDiv() : openDiv();
-
+        eventSource = event.target;
         function openDiv(){
             var css = {'width': '50%'};
             leftDiv.animate(css, {'start': openRightDiv });
