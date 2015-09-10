@@ -121,7 +121,9 @@ var roundFeather = {};
     }
 
     rf.resizeCorrectDivHeight = function (div, divTopPadding) {
-        $(window).on('resize', rf.setCorrectDivHeight(div, divTopPadding));
+        $(window).on('resize', function(){
+            rf.setCorrectDivHeight(div, divTopPadding);
+        });
     }
 
     rf.initSetLayout = function (pageTitle) {
