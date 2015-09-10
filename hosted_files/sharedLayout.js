@@ -8,6 +8,8 @@ var roundFeather = {};
     var $ = jQuery;
     var leftDiv = $('#hDHMenuDiv');
     var rightDiv = $('#hScrollDiv');
+    var leftTopPadding = 15;
+    var rightTopPadding = 15;
     var navMenu = $('#navigationMenu');
     var navLi = navMenu.children()
     var navButtons = navMenu.children().children();
@@ -87,7 +89,7 @@ var roundFeather = {};
             function openRightDiv() {
                 rightDiv.animate(css, function(){
                     rightDiv.show();
-                    rf.setRightHeight(); //makes sure the rightDiv is not blocked by the menu && does not cut off at the bottom
+                    rf.setCorrectDivHeight(rightDiv, rightTopPadding); //makes sure the rightDiv is not blocked by the menu && does not cut off at the bottom
                     window.location = event.target.href; //opens up the proper link upon rightDiv's reveal
                 });
             }
@@ -102,30 +104,31 @@ var roundFeather = {};
         }
     }
 
-    rf.setRightHeight = function () {
+    rf.setCorrectDivHeight = function (div, divTopPadding) {
         // Right container is set too low and get bottom cut off
         // Always: Doc.height() - Menu.height() = Right.height()
         // Right.css('top') == Menu.height() + some padding
 
-        var divPadding = 15;
+        divTopPadding = typeof divTopPadding !== 'undefined' ? divTopPadding : 15;
         var docHeight = $(document).height();
         var hHeight = $('header').height();
         var rightHeight = docHeight - hHeight;
-        rightDiv.css({
-            'height': String( rightHeight - divPadding ) + 'px' ,
+        div.css({
+            'height': String( rightHeight - divTopPadding ) + 'px' ,
             'top': String(hHeight) + 'px',
-            'padding-top': String(divPadding) + 'px',
+            'padding-top': String(divTopPadding) + 'px',
         });
     }
 
-    rf.resizeRightHeight = function () {
-        $(window).on('resize', rf.setRightHeight);
+    rf.resizeCorrectDivHeight = function (div, divTopPadding) {
+        $(window).on('resize', rf.setCorrectDivHeight(div, divTopPadding));
     }
 
     rf.initSetLayout = function (pageTitle) {
         rf.startingPositionsInit();
         rf.resizeNavbar(pageTitle);
         rf.rightToggle();
-        rf.resizeRightHeight();
+        rf.resizeCorrectDivHeight(rightDiv, rightTopPadding);
+        rf.resizeCorrectDivHeight(leftDiv, leftTopPadding);
     }
 })(roundFeather);
