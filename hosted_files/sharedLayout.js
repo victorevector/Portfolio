@@ -16,6 +16,7 @@ var roundFeather = {};
     var navText = navMenu.children().children().children();
     var eventSource = null;
     var logo = $('.image-logo');
+    var mobileMenu = $('.sp-mobile-menu');
 
     rf.resizeNavbar = function resizeNavbar(pageTitle) {
         // Resizes the navbar given a page title.
@@ -141,6 +142,6 @@ var roundFeather = {};
         rf.resizeCorrectDivHeight(leftDiv, leftTopPadding);
         rf.resizeLogo(); //Makes sure logo stays a constant height of 60px regardless of window size
         logo.css('height', '60px'); //Like resize BUT no resize event needed.
-        jQuery('.sp-mobile-menu').css('top', '30px'); //Solves problem of negative space between header & toggle menu
+        mobileMenu.css('top', '30px');
     }
 })(roundFeather);
