@@ -139,5 +139,6 @@ var roundFeather = {};
         rf.rightToggle();
         rf.resizeCorrectDivHeight(rightDiv, rightTopPadding);
         rf.resizeCorrectDivHeight(leftDiv, leftTopPadding);
+        rf.resizeLogo();
     }
 })(roundFeather);
