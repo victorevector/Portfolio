@@ -15,6 +15,7 @@ var roundFeather = {};
     var navButtons = navMenu.children().children();
     var navText = navMenu.children().children().children();
     var eventSource = null;
+    var logo = $('.image-logo');
 
     rf.resizeNavbar = function resizeNavbar(pageTitle) {
         // Resizes the navbar given a page title.
@@ -123,6 +124,12 @@ var roundFeather = {};
     rf.resizeCorrectDivHeight = function (div, divTopPadding) {
         $(window).on('resize', function(){
             rf.setCorrectDivHeight(div, divTopPadding);
+        });
+    }
+
+    rf.resizeLogo = function () {
+        $(window).on('resize', function(){
+            logo.css('height', '60px');
         });
     }
 
