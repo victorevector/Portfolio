@@ -134,11 +134,12 @@ var roundFeather = {};
     }
 
     rf.initSetLayout = function (pageTitle) {
-        rf.startingPositionsInit();
-        rf.resizeNavbar(pageTitle);
-        rf.rightToggle();
-        rf.resizeCorrectDivHeight(rightDiv, rightTopPadding);
+        rf.startingPositionsInit(); //Left Div takes up 100% of screen. Right Div is hidden
+        rf.resizeNavbar(pageTitle); //Menu Navbar is resized to fit screen
+        rf.rightToggle(); //Event handler that toggles the Right Div when NavBar is clicked
+        rf.resizeCorrectDivHeight(rightDiv, rightTopPadding); //Event handler- resizes Div Height & Top in relation to Header
         rf.resizeCorrectDivHeight(leftDiv, leftTopPadding);
-        rf.resizeLogo();
+        rf.resizeLogo(); //Makes sure logo stays a constant height of 60px regardless of window size
+        logo.css('height', '60px'); //Like resize BUT no resize event needed.
     }
 })(roundFeather);
