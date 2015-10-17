@@ -7,7 +7,7 @@ var portfolio = {};
             });
       };
 
-      var projects = [ 
+      var projects = [
       {name: 'Mackey Insurance', id: 'mackey', content: function(){ $('.modal-window').load('project-content/mackey.html'); } },
       {name: 'Fischer-Random Chess Position Generator', id: 'fischer', content: function(){ $('.modal-window').load('project-content/fischer.html'); } },
       {name: 'chatRoom', id: 'chatRoom', content: function(){ $('.modal-window').load('project-content/chatRoom.html'); } },
@@ -19,10 +19,13 @@ var portfolio = {};
 
       portfolioObj.modalWindowInit = function (selectedId) {
             // CREATE WINDOW and ADD ANIMATION EFFECTS
+            var leftWindow = ($('.container-body').position().left - 75);
             var initialSettings = {
                         'border': '5px solid' + FrameColor.randomColor(),
-                        'height': '2px', 
+                        'height': '2px',
                         'width': '2px',
+                        'left': leftWindow,
+                        'max-width': '500px',
                         'z-index': '1000',
                         'position': 'absolute',
                         'background-color': 'white',
@@ -30,8 +33,9 @@ var portfolio = {};
                          } ;
             var $modalWindow = $('<div class="modal-window"></div>');
             $modalWindow.css( initialSettings ).prependTo('body');
-            portfolioObj.center( $('body'), $modalWindow);
-            $modalWindow.animate( {left:'1%', width:"95%", top:'0%', height: "100%"}, "slow", addContent ); 
+            $modalWindow.animate( {width:"100%", top:'0%', height: "100%"}, "slow", addContent );
+            // portfolioObj.center( $('body'), $modalWindow);
+
 
 
             // ADD PROJECT CONTENT TO WINDOW
@@ -42,15 +46,15 @@ var portfolio = {};
                   });
                   selectedProject.content();
             }
-            
+
       };
 
       portfolioObj.close = function(el){
             var $modalWindow = el;
             $modalWindow.animate(
-                  {left:'50%', right:'50%', width:"0%",top:'50%', bottom: '50%' ,height: "0%"},
-                  "slow", 
-                  function() { $modalWindow.remove(); } 
+                  {width:"0%",top:'50%', bottom: '50%' ,height: "0%"},
+                  "slow",
+                  function() { $modalWindow.remove(); }
                   );
       }
 
@@ -74,5 +78,3 @@ var FrameColor = ( function() {
             }
       };
 } ) ();
-
-
