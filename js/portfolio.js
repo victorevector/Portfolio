@@ -19,7 +19,8 @@ var portfolio = {};
 
       portfolioObj.modalWindowInit = function (selectedId) {
             // CREATE WINDOW and ADD ANIMATION EFFECTS
-            var leftWindow = ($('.container-body').position().left - 75);
+            var leftWindow;
+            leftWindow = ($(window).width() < 450) ? 0 : $('.container-body').position().left - 75;
             var initialSettings = {
                         'border': '5px solid' + FrameColor.randomColor(),
                         'height': '2px',
@@ -33,7 +34,7 @@ var portfolio = {};
                          } ;
             var $modalWindow = $('<div class="modal-window"></div>');
             $modalWindow.css( initialSettings ).prependTo('body');
-            $modalWindow.animate( {width:"100%", top:'0%', height: "100%"}, "slow", addContent );
+            $modalWindow.animate( {width:"98%", top:'0%', height: "100%"}, "slow", addContent );
             // portfolioObj.center( $('body'), $modalWindow);
 
 
@@ -45,6 +46,7 @@ var portfolio = {};
                         if(selectedId == cV.id){ selectedProject = cV; }
                   });
                   selectedProject.content();
+                  portfolioObj.center( $('body'), $modalWindow);
             }
 
       };
