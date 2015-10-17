@@ -1,87 +1,85 @@
 <!DOCTYPE html>
 <html>
-    <head> 
-        <meta charset="utf-8" name="viewport" content="initial-scale=1.0">
-        <script src="js/jquery-1.11.0.min.js"></script>
-        <script src='js/portfolio.js'></script>
-        <link rel='stylesheet' type='text/css' href='css/portfolio.css'>
-        <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400' rel='stylesheet' type='text/css'>
-    </head>
+<head>
+    <meta charset="utf-8" name="viewport" content="initial-scale=1.0">
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src='js/portfolio.js'></script>
+    <link rel='stylesheet' type='text/css' href='css/portfolio.css'>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400' rel='stylesheet' type='text/css'>
+</head>
 
-    <body>
-                <div class='container-body'>
+<body>
+    <div class='container-body'>
+        <div class='container-header'>
+            <div id='name'>Victor Esteban Fimbres</div>
+            <div id='title'>Web Developer</div>
+        </div>
 
-                        <div class='container-header'>
-                            <div id='name'>Victor Esteban Fimbres</div>
-                            <div id='title'>Web Developer</div>
-                        </div>
+        <div class='container-content'>
+            <ul>
+                <li class='link' id='project-link'>projects</li>
+                <li class='hidden' id='project-list'>
+                        <div class='project-name' id='mackey'>Mackey Insurance Website</div>
+                        <div class='project-name' id='fischer'>Fischer-Random Chess Position Generator</div>
+                        <div class='project-name' id='chatRoom'>chatRoom</div>
+                        <div class='project-name' id='priceScraper'>Amazon Price Scraper</div>
+                        <div class='project-name' id='23andMe'>Genetics and Drug Metabolism</div>
+                        <div class='project-name' id='durr'>Durr-inspired Watch</div>
+                </li>
+                <li class='link' id='about-me'>about me</li>
+                <li class='link' id='contact-me-link'>contact me</li>
+                <li class='hidden' id='contact-me-content-container'>
+                    <div id='contact-me-content'>
+                        <p>
+                        <a href="mailto:victorevector@gmail.com" target="_blank">victorevector@gmail.com</a>
+                    </br>
+                        <a href="https://www.linkedin.com/in/victorefimbres" target="_blank">linkedin</a>
+                        </p>
 
-                        <div class='container-content'>
-                            <ul>
-                                        <li class='link' id='project-link'>projects</li>
-                                        <li class='hidden' id='project-list'>
-                                                <div class='project-name' id='mackey'>Mackey Insurance Website</div>
-                                                <div class='project-name' id='fischer'>Fischer-Random Chess Position Generator</div>
-                                                <div class='project-name' id='chatRoom'>chatRoom</div>
-                                                <div class='project-name' id='priceScraper'>Amazon Price Scraper</div>
-                                                <div class='project-name' id='23andMe'>Genetics and Drug Metabolism</div>
-                                                <div class='project-name' id='durr'>Durr-inspired Watch</div>
-                                        </li>
-                                        <li class='link' id='about-me'>about me</li>
-                                        <li class='link' id='contact-me-link'>contact me</li>
-                                        <li class='hidden' id='contact-me-content-container'>
-                                            <div id='contact-me-content'>
-                                                <p>
-                                                <a href="mailto:victorevector@gmail.com" target="_blank">victorevector@gmail.com</a> 
-                                            </br>
-                                                <a href="https://www.linkedin.com/in/victorefimbres" target="_blank">linkedin</a>
-                                                </p>
-                        
-                                            </div>
-                                        </li>
-                            </ul>
-                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
 
-                </div>
+    <script>
+        // Hide elements that will have slide toggle functionalitiy
+        $('.hidden').hide();
+        // Add slide toggle functionality to elements....
+        portfolio.slideToggleEl( $('#project-link'), $('#project-list') );
+        portfolio.slideToggleEl( $('#contact-me-link'), $('#contact-me-content-container') );
 
-                <script>
-                    // Hide elements that will have slide toggle functionalitiy
-                    $('.hidden').hide();
-                    // Add slide toggle functionality to elements....
-                    portfolio.slideToggleEl( $('#project-link'), $('#project-list') );
-                    portfolio.slideToggleEl( $('#contact-me-link'), $('#contact-me-content-container') );
+        // Center elements relative to browser's window on 2 occasions: when page first opens and when page is resized
+        centerInit();
+        $(window).resize( centerInit );
+        function centerInit(){
+            portfolio.center( $(window), $('body') );
+            portfolio.center( $('body'), $('.container-body') );
+        } ;
 
-                    // Center elements relative to browser's window on 2 occasions: when page first opens and when page is resized
-                    centerInit(); 
-                    $(window).resize( centerInit );
-                    function centerInit(){
-                        portfolio.center( $(window), $('body') );
-                        portfolio.center( $('body'), $('.container-body') );
-                    } ;
+        // Events that change border and text colors
+        $('#project-link').on('click', function() {
+            $('#project-list').css( 'border-color', FrameColor.randomColor() );
+        });
+        $('#contact-me-link').on('click', function() {
+            $('#contact-me-content-container').css( 'border-color', FrameColor.randomColor() );
+        });
+        $('.link').hover( function() { $(this).css('color', FrameColor.randomColor() ); },
+            function() { $(this).css('color', 'black' ); } );
+        $('.project-name').hover( function() { $(this).css('color', FrameColor.randomColor() ); },
+            function() { $(this).css('color', 'black' ); } );
 
-                    // Events that change border and text colors 
-                    $('#project-link').on('click', function() { 
-                        $('#project-list').css( 'border-color', FrameColor.randomColor() );
-                    });
-                    $('#contact-me-link').on('click', function() { 
-                        $('#contact-me-content-container').css( 'border-color', FrameColor.randomColor() );
-                    });
-                    $('.link').hover( function() { $(this).css('color', FrameColor.randomColor() ); },
-                        function() { $(this).css('color', 'black' ); } );
-                    $('.project-name').hover( function() { $(this).css('color', FrameColor.randomColor() ); },
-                        function() { $(this).css('color', 'black' ); } );
+        // Events that trigger the creation of the Modal Window
+        $('.project-name').on('click', function(event) {
+            var selectedEl = $(event.target).attr('id');
+            portfolio.modalWindowInit(selectedEl);
+        });
+        $('#about-me').on('click', function() {
+            var selectedEl = $(event.target).attr('id');
+            portfolio.modalWindowInit(selectedEl);
+        } );
 
-                    // Events that trigger the creation of the Modal Window
-                    $('.project-name').on('click', function(event) {
-                        var selectedEl = $(event.target).attr('id');
-                        portfolio.modalWindowInit(selectedEl); 
-                    });
-                    $('#about-me').on('click', function() {
-                        var selectedEl = $(event.target).attr('id');
-                        portfolio.modalWindowInit(selectedEl); 
-                    } ); 
-                    
-                </script>
-                
-    </body>
+    </script>
+
+</body>
 </html>
