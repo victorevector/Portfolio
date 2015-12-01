@@ -1,0 +1,32 @@
+<div class="close"> <b>X</b> </div>
+<div class='project-content' style='position: absolute;'>
+    <h1> IntEx </h1>
+    <p>
+        I built this app to help my friend find a Turkish perfume she had bought on her last trip to Turkey.
+        <br>
+        IntEx (international exchange) is a listings platform that helps users procure goods that exist in other countries but are not sold in their own. Simply post a listing and get connected with people in that country.
+    </p>
+    <p>
+        Built with HTML/CSS/JS/BOOTSTRAP/PYTHON/FLASK/POSTGRESQL
+        <br>
+        Supported functionalities:
+        <ul>
+            <li>Facebook Login</li>
+            <li>Post Listings</li>
+            <li>Edit Your Listings</li>
+            <li>Delete Your Listings</li>
+            <li>See All Posted Listings By Country</li>
+        </ul>
+    </p>
+    <p>
+        <a href='http://intex.victoref.com' target='_blank'> IntEx </a>
+    </p>
+
+</div>
+
+<script>
+    $('.close').on('click', function() {
+        portfolio.close($('.modal-window'));
+    });
+    portfolio.center($('.modal-window'), $('.project-content'));
+</script>

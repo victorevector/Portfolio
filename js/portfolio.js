@@ -16,6 +16,7 @@ var portfolio = {};
       {name: 'Durr-inspired Watch' , id: 'durr' , content: function(){ $('.modal-window').load('project-content/durr.html'); } },
       {name: 'About me' , id: 'about-me' , content: function(){ $('.modal-window').load('project-content/about-me.html'); } },
       {name: 'Accumulated Human Experiences' , id: 'accumulatedEx' , content: function(){ $('.modal-window').load('project-content/accumulatedExperience.html'); } },
+      {name: 'IntEx' , id: 'intex' , content: function(){ $('.modal-window').load('project-content/intex.html'); } },
       ];
 
       portfolioObj.modalWindowInit = function (selectedId) {
